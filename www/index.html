@@ -6,7 +6,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 ,user-scalable = no">
-    <script type="text/javascript" src="cordova-2.7.0.js"></script>
+    <!-- <script type="text/javascript" src="cordova-2.7.0.js"></script> -->
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.2.0.js"></script>
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
@@ -24,7 +24,7 @@
 
         <script src="https://cdn.flurry.com/js/flurry.js"></script>
         <script>FlurryAgent.startSession("F4BQ2V96H368ZMV57358");</script>
-        
+
 
                 <script>
 $(document).on('pagebeforecreate','.century', function(event){
@@ -32,7 +32,7 @@ $(document).on('pagebeforecreate','.century', function(event){
                            var page = $(this).attr("id");
                            FlurryAgent.logEvent(page);
                            //showLoader(false);
-                         
+
                            });
             </script>
         <script>
@@ -45,16 +45,16 @@ $(document).on('pagebeforecreate','.card', function(event){
             </script>
 
 
-	
-	<title>Insurance Zone</title>	
+
+	<title>Insurance Zone</title>
 </head>
 <body class="home" style="background-color:#ffffff;max-height:100%;">
 
 <!-- Home -->
-											
+
 <!--script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" /-->
-<script>	
+<script>
 
 
 var locationpassed  =false;
@@ -71,16 +71,16 @@ var locationpassed  =false;
                             $('#loader').hide();
                          },
                          success : function() {
-                         
+
                          }
                          });
     }
-    
+
     document.addEventListener("deviceready", onDeviceReady, false);
-    
 
 
-    
+
+
     function openInAppBrowser(url) {
         window.open(url, '_blank', 'location=yes');
     }
@@ -88,14 +88,14 @@ var locationpassed  =false;
 	function accessControl() {
 		$.get('http://197.96.18.242/~insurancezone/service/user/modules', function(data) {
 			var data = jQuery.parseJSON(data);
-			
+
 			$.each(data, function(index, obj) {
 				if (obj.status != "1") {
 						$("#" + obj.elid).remove();
 					}
-				
+
 			});
-			
+
 			if ($('#panic_content').children().length == 0) {
 				$("#panic_content").html("<div style='padding:2em'>Please note that this service is only available to valid members. Your registration is in the process of being approved - please sign in after 24 hours to access these benefits.</div>");
 			}
@@ -103,7 +103,7 @@ var locationpassed  =false;
 				$("#assist_content").html("<div style='padding:2em'>Please note that this service is only available to valid members. Your registration is in the process of being approved - please sign in after 24 hours to access these benefits.</div>");
 			}
 		});
-	}	
+	}
 /*
 		$.get('http://197.96.18.242/~insurancezone/service/competition', function(data) {
 			var data = jQuery.parseJSON(data)
@@ -112,8 +112,8 @@ var locationpassed  =false;
 				}
 		});
 
-  */  
-	
+  */
+
 	$.fn.serializeObject = function()
 	{
 		var o = {};
@@ -130,24 +130,24 @@ var locationpassed  =false;
 		});
 		return o;
 	};
-	
-	//init on page refresh 
+
+	//init on page refresh
 	window.onload = function() {
 		accessControl();
 	}
-		
-											   
-											   
-											  
-											 
-											
-	
+
+
+
+
+
+
+
 </script>
-    
-	
-	
-	
-   
+
+
+
+
+
     <script type="text/javascript" charset="utf-8">
 	var x;
 	var y;
@@ -179,18 +179,18 @@ var locationpassed  =false;
 		y="28.040028" ;
     }
 
-	
-										
-	
-	
-	
+
+
+
+
+
     </script>
 <!-- login -->
 <script>
 	$('#login').live('pagebeforecreate',function(event){
 		$("#login_btn").on('click', function () {
 			$.post('http://197.96.18.242/~insurancezone/service/user/login',{
-				
+
 				'username': $("#username").val(),
 				'password': $("#password").val()},
 				function(data, status, xhr) {
@@ -214,15 +214,15 @@ var locationpassed  =false;
 </script>
     <div id="loader">Loading...
         </div>
-		
 
-		
-		
-		
+
+
+
+
 <div data-role="page" id="login" class="card">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -240,7 +240,7 @@ var locationpassed  =false;
 									<td style="width: 100%;"><input type="text" name="username" id="username" value=""  placeholder="Username" style="width: 100%;"/></td>
 								</tr>
 							</table>
-						</div>	
+						</div>
 						<div style="background-color: #ccc; width: 95%; height: 1px; margin: 0 auto;">
 						</div>
 						<div data-role="fieldcontain">
@@ -250,7 +250,7 @@ var locationpassed  =false;
 									<td style="width: 100%;"><input type="password" name="password" id="password" value="" placeholder="Password"  style="width: 100%;"/></td>
 								</tr>
 							</table>
-						</div>	
+						</div>
 					</div>
 				</div>
 				<div style="clear: both;"></div>
@@ -275,18 +275,18 @@ var locationpassed  =false;
 					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 
-			
+
 			</tr>
 
 		</table>
-       
+
 	</div>
 </div><!-- /login -->
 
 	<!-- register -->
 	<script>
 		$('#register').live('pagebeforecreate',function(event){
-			
+
     			$("#registration").validate({
 				rules: {
             				password: {
@@ -315,19 +315,19 @@ var locationpassed  =false;
 							alert('There was an issue with the registration');
 						}
 					});
-  				
+
                  event.preventDefault();
 				return false;
 				} else {
 					return false;
 				}
-			});				
+			});
 		});
 	</script>
 		<div data-role="page" id="register" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -365,7 +365,7 @@ var locationpassed  =false;
 										};
 									</script>
 									</tr>
-						
+
 									<tr>
 										<td><label for="username"><b>Username*:</b></label></td>
 									</tr>
@@ -399,12 +399,12 @@ var locationpassed  =false;
 										<td style="width: 100%;"><input class="required" name="cellphone" id="cellphone" value="" placeholder="Cellphone"  style="width: 100%;"/></td>
 									</tr>
 
-										
+
 										<tr>
 											<td style="vertical-align: top;"><label for="newsletter" style="width: 100%;"><b>Would you like to receive monthly newsletters and Promotions ?</b></label></td>
 										</tr>
 										<tr>
-											<td>							
+											<td>
 												<div class="ui-select" style="width: 100%;">
 													<select name="newsletter" id="newsletter" style="width: 100%;">
 														<option value="yes">Yes</option>
@@ -414,17 +414,17 @@ var locationpassed  =false;
 												</div>
 											</td>
 										</tr>
-										
+
 								</table>
-							</div>	
+							</div>
 						</div>
 					</div>
 					<div style="clear: both;"></div>
 					<button type="submit" data-theme="b" class="ui-btn-hidden" aria-disabled="false" id="register_btn">Submit</button>
 				</div>
-			</form>	
+			</form>
 			</div><!-- /content -->
-				
+
 		</div>
 		<div id="footer" class="footer">
 			<table>
@@ -437,15 +437,15 @@ var locationpassed  =false;
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
 			</table>
 		</div>
 	</div><!-- /register -->
-	
-		
+
+
 	<!-- forgotpass -->
 	<script>
 		$('#forgotpass').live('pagebeforecreate',function(event){
@@ -468,8 +468,8 @@ var locationpassed  =false;
 	</script>
 	<div data-role="page" id="forgotpass" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -489,7 +489,7 @@ var locationpassed  =false;
 										<td style="width: 100%;"><input type="text" name="email" id="email_forgot" value="" placeholder="Email"  style="width: 100%;"/></td>
 									</tr>
 								</table>
-							</div>	
+							</div>
 						</div>
 					</div>
 					<div style="clear: both;"></div>
@@ -508,7 +508,7 @@ var locationpassed  =false;
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -520,9 +520,9 @@ var locationpassed  =false;
 <div data-role="page" id="menu" class="century">
 	<div id="container">
 	<div id="header"style="padding-top:10px ;padding-bottom:10px;height:30%;max-height:30%;">
-		
+
 		<a href="#menu"><img src="images/menulogo.png"  class="center"  style="  "/></a>
-		
+
 		<div style="font-size:16px;font-color:black;padding-top:20px;padding-bottom:20px;">Assist & Lifestyle Zone</div>
 	</div>
 	<div data-role="content" id="content" >
@@ -530,13 +530,13 @@ var locationpassed  =false;
 			<tr >
 				<td>
 					<a href="#panic" data-ajax="false" ><img src="images/home_panic.jpg" alt="Panic"></a>
-					
+
 				</td>
 				<td>
 					<a href="#AssistServices" data-ajax="false"><img src="images/home_assistservices.jpg" alt="Assist Services"></a>
 				</td>
 				<td>
-					<a href="#plumbing"><img src="images/home_geyser.jpg" alt="Plumbing Damage"></a> 
+					<a href="#plumbing"><img src="images/home_geyser.jpg" alt="Plumbing Damage"></a>
 				</td>
 			</tr>
 			<tr >
@@ -547,32 +547,32 @@ var locationpassed  =false;
 					<a href="#Lodgeaclaim"><img src="images/home_lodgeaclaim.jpg" alt="Lodge a claim"></a>
 				</td>
 				<td>
-					<a href="#requestinfo"><img src="images/home_requestmore.jpg" alt="Request Info"></a> 
+					<a href="#requestinfo"><img src="images/home_requestmore.jpg" alt="Request Info"></a>
 				</td>
-				
-				
+
+
 			</tr>
 			<tr >
 			<td>
 					<a href="#crimeassist"><img src="images/home_crimeassist.jpg" alt="Crime Assist"></a>
 				</td>
 				<td>
-					<a href="#newsweathertraffic"><img src="images/home_newsweatherandlifestyle.jpg" alt="News, Weather & Traffic"></a> 
+					<a href="#newsweathertraffic"><img src="images/home_newsweatherandlifestyle.jpg" alt="News, Weather & Traffic"></a>
 				</td>
 				<td>
 					<a href="#conciergetravellifestyle" data-ajax ="false"><img   src="images/home_conciergetravelandlifestyle.jpg" alt="concierge Travel & Lifestyle"></a>
-				</td>				
-				
+				</td>
+
 
 			</tr>
 			</table>
-			
+
 			<div style="font-size:1em;font-color:black;padding-top:10px;">Insurance Zone is an Authorised Financial Services Provider #42879</div>
-			
+
 			<table style="padding-top:5%;width:100%;">
 			<tr >
 				<td style="text-align: left; width:33%;">
-					<a style="color:black"  href="#contactus"  class="century">Contact Us</a> 
+					<a style="color:black"  href="#contactus"  class="century">Contact Us</a>
 				</td>
 				<td style="text-align: left; width:33%;">
 				</td>
@@ -582,14 +582,14 @@ var locationpassed  =false;
 			</tr>
 		</table>
 	</div><!-- end content -->
-	
+
 
 	<!-- Footer -->
 			<div id="footer" class="footer">
 				<table style="width :100%;margin-top:5px;bottom:0;padding-bottom:2px;max-height:45px;">
 					<tr>
 						<td style="left:0;width:50%;">
-				
+
 				</td>
 				<td style="width: 10%;"></td>
 						<td align="right">
@@ -598,35 +598,35 @@ var locationpassed  =false;
 						<td align="right">
 							<a href="#" onclick="openInAppBrowser('http://www.insurancezone.co.za');" target="_blank" style="width: 100%;"><img src="images/footer_info.gif" style="width: 100%;max-width:50px;max-height:50px;" /></a>
 						</td>
-						
+
 						<td align="right">
 							<a href="#menu" style="width: 100%;"><img src="images/footer_home.gif" style="width:100%;max-width:50px;max-height:50px;" /></a>
 						</td>
 
 					</tr>
-                    
+
 				</table>
 			</div>
 	<div style="clear:both"></div>
-</div>	
-	
+</div>
+
 	<!-- End Footer -->
 </div><!-- end page -->
 
 <script>
 	$('#panic').live('pagebeforecreate',function(event){
 		accessControl();
-		
+
 	});
-	
-	
+
+
 </script>
 
 <!-- Panic -->
 <div data-role="page" id="panic" class="card" data-dom-cache="false">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -639,8 +639,8 @@ var locationpassed  =false;
 				<li id="panic_2"><a href="tel:+27119918849"><img src="images/Assist_Home.jpg" alt="Home Panic" class="ui-li-icon">Emergency Home Assist</a></li>
 				<li id="panic_3"><a href="#panic_nearby"><img src="images/panic_nearby.png" alt="Nearby Emergency Services" class="ui-li-icon">Nearby Emergency Services</a></li>
 				<li class="last" id="panic_4"><a href="#panic_security"><img src="images/Assist_SAPS.png" alt="Your Security Company" class="ui-li-icon">Your Security Company</a></li>
-			
-			
+
+
 			</ul>
 		</div><!-- /content -->
 	</div>
@@ -654,34 +654,34 @@ var locationpassed  =false;
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /page -->
 <script>
 	$('#panic_security').live('pagebeforecreate',function(event){
 		accessControl();
-		
+
 		if( localStorage.securitynumber != undefined)
 			{
 			document.getElementById("securitynumber").value= localStorage.securitynumber;
-	
+
 			}
 			else
 			{
-			
-			
+
+
 			alert("To make use of this functionality please capture your security company's number in the 'Update Contact Number'field.");
-			
+
 			}
-		 
-		$( "#security_call_submit" ).on('click', function () 
+
+		$( "#security_call_submit" ).on('click', function ()
 		{
-		
+
 		if( localStorage.securitynumber != undefined)
 			{
 			var number= "tel:"+ localStorage.securitynumber;
@@ -689,39 +689,39 @@ var locationpassed  =false;
 		}else
 		{
 		alert("To make use of this functionality please capture your security company's number in the 'Update Contact Number'field.");
-			
+
 		var number= "tel:10111";
 		window.location =number;
-		
+
 		}
-		
+
 		//window.location ="tel:"+ securitynumber;
 		 });
-		
+
 		$( "#security_form_submit" ).on('click', function () {
-		
+
 			localStorage.securitynumber= document.getElementById("securitynumber").value;
 			alert("Your security company's number has been updated.");
-			
-                        
+
+
 		 });
-		
+
 	});
 </script>
-		
-		
+
+
 	<div data-role="page" id="panic_security" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
 				<h1>Your Security Company</h1>
 				<a href="#panic" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 			</div><!-- /header -->
-			
-				
+
+
 			<div data-role="content"style="background:transparent;">
 			<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 							<div class="ui-block-a" style="width: 100%; max-width: 600px;">
@@ -733,31 +733,31 @@ var locationpassed  =false;
 								<button  type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false" id="security_call_submit"style="min-width: 100%;">Call for Assistance</button>
 							</td>
 							</tr >
-									
+
 									<tr >
 										<td style="width: 100%;padding-top:7%;text-align:left;padding-left:6%;"><label for="sec" style="min-width: 100%;">Update Contact Number:</label></td>
 									</tr>
 									<tr >
 										<td style="width: 100%;padding-top:2%;"><input type="text" name="securitynumber" id="securitynumber" value=""  placeholder="Update Contact Number" /></td>
 									</tr>
-										
-								
+
+
 								<tr >
 								<td style="width: 100%;">
 								<button  type="submit" data-theme="b" class="ui-btn-hidden" aria-disabled="false" id="security_form_submit"style="min-width: 100%;">Update</button>
 							</td>
-							</tr>	
-							</table>	
+							</tr>
+							</table>
 							</div>
-						
+
 						</div>
 					</div>
 					<div style="clear: both;"></div>
-					
+
 				</div>
 			</div>
-		
-									
+
+
 			<!-- /content -->
 		</div>
 			<div id="footer" class="footer">
@@ -770,21 +770,21 @@ var locationpassed  =false;
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-		</div><!-- /Nearby Emergency Services -->	
-		
-		
+		</div><!-- /Nearby Emergency Services -->
+
+
 	<!-- Nearby Emergency Services -->
 	<div data-role="page" id="panic_nearby" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -809,14 +809,14 @@ var locationpassed  =false;
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-		</div><!-- /Nearby Emergency Services -->	
+		</div><!-- /Nearby Emergency Services -->
 		<!-- plumbing -->
 	<script>
 		$('#plumbing').live('pagebeforecreate',function(event){
@@ -830,8 +830,8 @@ var locationpassed  =false;
         </script>
 	<div data-role="page" id="plumbing" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -853,15 +853,15 @@ var locationpassed  =false;
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-	</div><!-- /page -->			
-				
-				
+	</div><!-- /page -->
+
+
 	 <!-- plumbing capture-->
     <script>
         $('#plumbing_capture').live('pagebeforecreate',function(event){
@@ -881,7 +881,7 @@ var locationpassed  =false;
                                                                                   });
                                                                            return false;
                                                                            });
-                                       
+
                                        $("#plumbing_capture_photos_btn").on('click', function () {
                                                                                $.mobile.changePage("#plumbing_capture_photos", "slide");
                                                                                });
@@ -890,8 +890,8 @@ var locationpassed  =false;
         </script>
     <div data-role="page" id="plumbing_capture" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
@@ -903,7 +903,7 @@ var locationpassed  =false;
                     <input type="hidden" name="plumbing_capture_photos_1_btn_data" id="plumbing_capture_photos_1_btn_data" value="" />
                     <input type="hidden" name="plumbing_capture_photos_2_btn_data" id="plumbing_capture_photos_2_btn_data" value="" />
                     <input type="hidden" name="plumbing_capture_photos_3_btn_data" id="plumbing_capture_photos_3_btn_data" value="" />
-                    
+
 					<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 						<div class="ui-block-a" style="width: 100%; max-width: 600px;">
 							<div data-theme="d" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-d" aria-disabled="false">
@@ -946,21 +946,21 @@ var locationpassed  =false;
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-       
+
     </div><!-- /page -->
-    
+
     <!-- plumbing accident capture photos-->
     <script>
         $('#plumbing_capture_photos').live('pagebeforecreate',function(event){
                                               $("#plumbing_capture_photos .capture").on('click', function () {
                                                                                            var thisEl = this.id;
-                                                                                           
+
                                                                                            navigator.camera.getPicture(
                                                                                                                        function (imageData) {
                                                                                                                        $("#" + thisEl + "_data").val(imageData);
@@ -975,7 +975,7 @@ var locationpassed  =false;
                                                                                                                        encodingType: Camera.EncodingType.JPEG
                                                                                                                        });
                                                                                            });
-                                              
+
                                               $("#plumbing_capture_photos_submit").on('click', function (event) {
                                                                                          alert('Photo\'s uploaded');
                                                                                          $.mobile.changePage("#plumbing_capture", "slide");
@@ -986,15 +986,15 @@ var locationpassed  =false;
         </script>
     <div data-role="page" id="plumbing_capture_photos" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
                 <h1>Add Photo/s</h1>
                 <a href="#plumbing_capture" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
             </div><!-- /header -->
-            <div data-role="content">						
+            <div data-role="content">
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="plumbing_capture_photos_1_btn" style="width: 100%;">Damaged area 1</button>
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="plumbing_capture_photos_2_btn" style="width: 100%;">Damaged area 2</button>
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="plumbing_capture_photos_3_btn" style="width: 100%;">Damaged area 3</button>
@@ -1012,29 +1012,29 @@ var locationpassed  =false;
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
 		<!-- Panic -> Nearby -> hospitals -->
 		<script>
-			$('#panic_nearby_hospitals').live('pagebeforecreate',function(event){			
+			$('#panic_nearby_hospitals').live('pagebeforecreate',function(event){
 				if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
 					}
-				
+
 				$("#panic_nearby_hospitals_iframe").html('<iframe style="width: 100%; height: 80%;" width="75%" height="75%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&amp;q=hospital&aq=&amp;sll='+x+','+y+'&amp;sspn=0.040066,0.077162&ie=UTF8&hq=hospital&hnear=&amp;t=m&ll='+x+','+y+'&amp;spn=0.007705,0.008669&z=14&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&amp;q=hospital&aq=&amp;sll='+x+','+y+'&amp;sspn=0.040066,0.077162&ie=UTF8&hq=hospital&hnear=&amp;t=m&ll='+x+','+y+'&amp;spn=0.007705,0.008669&z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>');
 			});
 		</script>
 		<div data-role="page" id="panic_nearby_hospitals" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -1046,9 +1046,9 @@ var locationpassed  =false;
 						<div id="panic_nearby_hospitals_iframe"></div>
 					</div>
 				</div>
-				
+
 			</div><!-- /content -->
-		
+
 			<div id="footer" class="footer">
 				<table>
 					<tr>
@@ -1059,11 +1059,11 @@ var locationpassed  =false;
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /Panic -> Nearby -> hospitals -->
@@ -1074,15 +1074,15 @@ var locationpassed  =false;
 if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
-					}												
+					}
                                                                 $("#panic_nearby_police_iframe").html('<iframe style="width: 100%; height: 80%;" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=police%20station&amp;aq=&amp;sll='+x+','+y+'&amp;sspn=0.040066,0.077162&amp;ie=UTF8&amp;hq=police%20station&amp;hnear=&amp;t=m&amp;ll='+x+','+y+'&amp;spn=0.007705,0.008669&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=police%20station&amp;aq=&amp;sll='+x+','+y+'&amp;sspn=0.040066,0.077162&amp;ie=UTF8&amp;hq=hospital&amp;hnear=&amp;t=m&amp;ll='+x+','+y+'&amp;spn=0.007705,0.008669&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>');
                                                 });
                                 </script>
-		
+
 		<div data-role="page" id="panic_nearby_police" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -1105,18 +1105,18 @@ if(locationpassed == false)
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /Panic -> Nearby -> Police -->
 
 		<!-- Panic -> Nearby -> Fire -->
                                 <script>
-                                                $('#panic_nearby_fire').live('pagebeforecreate',function(event){                                           
+                                                $('#panic_nearby_fire').live('pagebeforecreate',function(event){
                                                                 if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
@@ -1126,8 +1126,8 @@ if(locationpassed == false)
                                 </script>
 		<div data-role="page" id="panic_nearby_fire" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -1150,19 +1150,19 @@ if(locationpassed == false)
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /Panic -> Nearby -> fire -->
   <!-- HospitalsandPolice Emergency Services -->
         <div data-role="page" id="HospitalsandPolice" class="card">
                                 <div id="header">
-                                                
-                                                
+
+
                                 </div>
                                 <div data-role="content" class="card_content">
                                                 <div data-role="header">
@@ -1188,19 +1188,19 @@ if(locationpassed == false)
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-        
+
 		</div>
-    <!-- /page --><!-- /HospitalsandPolice Emergency Services -->        
-                               
+    <!-- /page --><!-- /HospitalsandPolice Emergency Services -->
+
                                 <!-- Panic -> HospitalsandPolice -> hospitals -->
                                 <script>
-                                                $('#HospitalsandPolice_hospitals').live('pagebeforecreate',function(event){                                
+                                                $('#HospitalsandPolice_hospitals').live('pagebeforecreate',function(event){
                                                                 if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
@@ -1210,8 +1210,8 @@ if(locationpassed == false)
 		</script>
                                 <div data-role="page" id="HospitalsandPolice_hospitals" class="card">
                                                 <div id="header">
-                                                                
-                                                                
+
+
                                                 </div>
                                                 <div data-role="content" class="card_content">
                                                                 <div data-role="header">
@@ -1234,29 +1234,29 @@ if(locationpassed == false)
                                                                                                 </td>
                                                                                                 <td style="width: 40%;"></td>
                                                                                                 <td align="right">
-                                                                                                                                                                                                <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
- 
+                                                                                                                                                                                                <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
+
                                                                                                 </td>
                                                                                 </tr>
 
                                                                 </table>
                                                 </div>
                                 </div><!-- /Panic -> HospitalsandPolice -> hospitals -->
- 
+
                                 <!-- Panic -> HospitalsandPolice -> Police -->
                                 <script>
-                                                $('#HospitalsandPolice_police').live('pagebeforecreate',function(event){                                      
+                                                $('#HospitalsandPolice_police').live('pagebeforecreate',function(event){
 if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
-					}                                                               
+					}
 															   $("#HospitalsandPolice_police_iframe").html('<iframe style="width: 100%; height: 80%;" width="75%" height="75%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=police%20station&amp;aq=&amp;sll='+x+','+y+'&amp;sspn=0.040066,0.077162&amp;ie=UTF8&amp;hq=police%20station&amp;hnear=&amp;t=m&amp;ll='+x+','+y+'&amp;spn=0.007705,0.008669&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=hospital&amp;aq=&amp;sll='+x+','+y+'&amp;sspn=0.040066,0.077162&amp;ie=UTF8&amp;hq=hospital&amp;hnear=&amp;t=m&amp;ll='+x+','+y+'&amp;spn=0.007705,0.008669&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>');
                                                 });
                                 </script>
                                 <div data-role="page" id="HospitalsandPolice_police" class="card">
                                                 <div id="header">
-                                                                
-                                                                
+
+
                                                 </div>
                                                 <div data-role="content" class="card_content">
                                                                 <div data-role="header">
@@ -1279,18 +1279,18 @@ if(locationpassed == false)
                                                                                                 </td>
                                                                                                 <td style="width: 40%;"></td>
                                                                                                 <td align="right">
-                                                                                                                                                                                                <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
- 
+                                                                                                                                                                                                <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
+
                                                                                                 </td>
                                                                                 </tr>
 
                                                                 </table>
                                                 </div>
                                 </div><!-- /Panic -> HospitalsandPolice -> Police -->
- 
+
                                 <!-- Panic -> HospitalsandPolice -> Fire -->
                                 <script>
-                                                $('#HospitalsandPolice_fire').live('pagebeforecreate',function(event){                                           
+                                                $('#HospitalsandPolice_fire').live('pagebeforecreate',function(event){
                                                                 if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
@@ -1300,8 +1300,8 @@ if(locationpassed == false)
                                 </script>
                                 <div data-role="page" id="HospitalsandPolice_fire" class="card">
                                                 <div id="header">
-                                                                
-                                                                
+
+
                                                 </div>
                                                 <div data-role="content" class="card_content">
                                                                 <div data-role="header">
@@ -1324,8 +1324,8 @@ if(locationpassed == false)
                                                                                                 </td>
                                                                                                 <td style="width: 40%;"></td>
                                                                                                 <td align="right">
-                                                                                                                                                                                                <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
- 
+                                                                                                                                                                                                <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
+
                                                                                                 </td>
                                                                                 </tr>
 
@@ -1335,8 +1335,8 @@ if(locationpassed == false)
 <!-- News, Weather & Traffic -->
 <div data-role="page" id="newsweathertraffic" class="card">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -1361,7 +1361,7 @@ if(locationpassed == false)
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
@@ -1370,7 +1370,7 @@ if(locationpassed == false)
 </div><!-- /page -->
 
 	<!-- News, Weather & Traffic -> News -->
-	<script> 
+	<script>
 		$('#newsweathertraffic_news').live('pagebeforecreate',function(event){
 			//$('#rssfeed').rssfeed('http://feeds.news24.com/articles/news24/SouthAfrica/rss', {limit: 5});
 			$('#rssfeed').rssfeed('http://feeds.news24.com/articles/news24/SouthAfrica/rss', {
@@ -1382,8 +1382,8 @@ if(locationpassed == false)
 	</script>
 	<div data-role="page" id="newsweathertraffic_news" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -1393,7 +1393,7 @@ if(locationpassed == false)
 			<div data-role="content">
 				<div id="rssfeed">
 					<p>Loading...</p>
-				</div>	
+				</div>
 			</div><!-- /content -->
 		</div>
 		<div id="footer" class="footer">
@@ -1406,7 +1406,7 @@ if(locationpassed == false)
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -1427,8 +1427,8 @@ if(locationpassed == false)
 	<!-- News, Weather & Traffic -> Weather -->
 	<div data-role="page" id="newsweathertraffic_weather" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -1453,7 +1453,7 @@ if(locationpassed == false)
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -1532,8 +1532,8 @@ if(locationpassed == false)
 	<!-- News, Weather & Traffic -> Traffic -->
 	<div data-role="page" id="newsweathertraffic_traffic" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -1584,7 +1584,7 @@ if(locationpassed == false)
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -1592,11 +1592,11 @@ if(locationpassed == false)
 		</div>
 	</div><!-- /page -->
 
-	
-	
-	
-	<!-- Request info --> 
-	
+
+
+
+	<!-- Request info -->
+
 	<script>
 		$('#requestinfo').live('pagebeforecreate',function(event){
                                $("#info_call_btn").on('click', function () {
@@ -1609,8 +1609,8 @@ if(locationpassed == false)
         </script>
 	<div data-role="page" id="requestinfo" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -1620,7 +1620,7 @@ if(locationpassed == false)
 			<div data-role="content">
 				<button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false" id="info_request_btn">Email</button>
 				<button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false" id="info_call_btn">Call for Assistance</button>
-				
+
 			</div><!-- /content -->
 		</div>
 			<div id="footer" class="footer">
@@ -1633,22 +1633,22 @@ if(locationpassed == false)
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-	</div><!-- /page -->			
-	
-	
-	
-	<script> 
+	</div><!-- /page -->
+
+
+
+	<script>
 		$('#request_info').live('pagebeforecreate',function(event){
 			$( "#request_info_form" ).on( "submit", function( event ) {
-				
+
 				var formData = $('#request_info_form').serializeObject();
-				
+
 				$.post('http://197.96.18.242/~insurancezone/service/requestinfo/create', formData,
 					function(data, status, xhr) {
 						var response = jQuery.parseJSON(data)
@@ -1667,8 +1667,8 @@ if(locationpassed == false)
 	</script>
 	<div data-role="page" id="request_info" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -1703,7 +1703,7 @@ if(locationpassed == false)
 											<td style="width: 100%;">
 												<input type="text" name="info_" id="info_contactnumber" value="" placeholder="Contact Number"  style="width: 100%; margin-bottom: 4px;"/>
 											</td>
-										</tr>										
+										</tr>
 																				<tr>
 											<td style="vertical-align: top;"><label for="alemmail">Email Address:</label></td>
 										</tr>
@@ -1720,9 +1720,9 @@ if(locationpassed == false)
 												<input type="text" name="info_comments" id="info_comments" value="" placeholder="Comments"  style="width: 100%; margin-bottom: 4px;"/>
 											</td>
 										</tr>
-										
+
 									</table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div style="clear: both;"></div>
@@ -1742,33 +1742,33 @@ if(locationpassed == false)
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
 			</table>
 		</div>
 	</div><!-- /page -->
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 <!-- Crime Assist -->
 
-<script> 
+<script>
 	$('#crimeassist').live('pagebeforecreate',function(event){
 		$("#crimeassist_call_btn").on('click', function () {
-			window.location = "tel:10111"; 
+			window.location = "tel:10111";
 		});
 	});
 </script> <!--todo-->
 
 <div data-role="page" id="crimeassist" class="card">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -1788,7 +1788,7 @@ if(locationpassed == false)
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
@@ -1798,20 +1798,20 @@ if(locationpassed == false)
 
 
 <!-- Assist Services -->
-<script>	
+<script>
 	$('#AssistServices').live('pagebeforecreate',function(event){
 		accessControl();
 
-		
+
 	});
 </script>
 <div data-role="page" id="AssistServices" class="card" data-dom-cache="false">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
-	
+
 		<div data-role="header">
 			<h1>Assist Services</h1>
 			<a href="#menu" data-icon="home" data-iconpos="left" data-direction="reverse" class="ui-btn-right">Home</a>
@@ -1821,7 +1821,7 @@ if(locationpassed == false)
 				<li id="assistservices_1"><a href="#Assist_roadside"><img src="images/Assist_Road.jpg" alt="Roadside Assist" class="ui-li-icon">Roadside Assist</a></li>
 				<li id="assistservices_3"><a href="#Assist_medical"><img src="images/Assist_Medical.jpg" alt="Medical Assist" class="ui-li-icon">Medical Assist Access</a></li>
 				<li id="assistservices_2"><a href="#Assist_home"><img src="images/Assist_Home.jpg" alt="Home Assist" class="ui-li-icon">Home Assist (All Other)</a></li>
-				
+
 			</ul>
 		</div><!-- /content -->
 	</div>
@@ -1835,25 +1835,25 @@ if(locationpassed == false)
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
 
-			
 
-		
-			
-			
+
+
+
+
 	<!-- Assist_roadside -->
 	<script>
 		$('#Assist_roadside').live('pagebeforecreate',function(event){
 			$("#assist_roadside_breakdown_btn").on('click', function () {
-				
+
 				$.mobile.changePage("#Assist_roadside_breakdown", "slide");
 			});
 			$("#assist_roadside_accident_btn").on('click', function () {
@@ -1863,8 +1863,8 @@ if(locationpassed == false)
 	</script>
 	<div data-role="page" id="Assist_roadside" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -1886,7 +1886,7 @@ if(locationpassed == false)
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-											<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+											<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 
 					</td>
@@ -1895,7 +1895,7 @@ if(locationpassed == false)
 			</table>
 		</div>
 	</div>
-			
+
 		<!-- Assist_roadside breakdown -->
 		<script>
 			$('#Assist_roadside_breakdown').live('pagebeforecreate',function(event){
@@ -1905,28 +1905,28 @@ window.location = "tel:+27117991592";
 					//alert('Someone has been dispatched to your location. ETA 5 mins.');
 					//$.mobile.changePage("#menu", "slide");
 				});
-				
-				
+
+
 				$("#assist_roadside_breakdown_locksmith_btn").on('click', function () {
 		window.location = "tel:+27117991592";
 					//alert('Someone has been dispatched to your location. ETA 5 mins.');
 					//$.mobile.changePage("#menu", "slide");
 				});
-				
-				
+
+
 				$("#assist_roadside_breakdown_flattyre_btn").on('click', function () {
 			window.location = "tel:+27117991592";
 					//alert('Someone has been dispatched to your location. ETA 5 mins.');
 					//$.mobile.changePage("#menu", "slide");
 				});
-				
+
 				$("#assist_roadside_breakdown_flatbattery_btn").on('click', function () {
 		window.location = "tel:+27117991592";
 					//alert('Someone has been dispatched to your location. ETA 5 mins.');
 					//$.mobile.changePage("#menu", "slide");
 				});
-				
-				
+
+
 				$("#assist_roadside_breakdown_general_btn").on('click', function () {
 
 					window.location = "tel:+27117991592";
@@ -1937,8 +1937,8 @@ window.location = "tel:+27117991592";
 		</script>
 		<div data-role="page" id="Assist_roadside_breakdown" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -1963,15 +1963,15 @@ window.location = "tel:+27117991592";
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div>
-		
+
 		<!-- Assist_roadside accident-->
 		<script>
 			$('#Assist_roadside_accident').live('pagebeforecreate',function(event){
@@ -1985,8 +1985,8 @@ window.location = "tel:+27117991592";
 		</script>
 		<div data-role="page" id="Assist_roadside_accident" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -2008,27 +2008,27 @@ window.location = "tel:+27117991592";
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /page -->
-			
+
 			<!-- Assist_roadside accident capture-->
 			<script>
 				$('#Assist_roadside_accident_capture').live('pagebeforecreate',function(event){
 					document.getElementById("accident_date").value = Date();
 										if(locationpassed==true)
 					{
-					document.getElementById("accident_location").value = x+', '+y; 
+					document.getElementById("accident_location").value = x+', '+y;
 					}
 					else
 					{document.getElementById("accident_location").value = "Could not obtain location."; }
 				$( "#assist_roadside_accident_capture_form" ).on( "submit", function( event ) {
-					
+
 						var formData = $('#assist_roadside_accident_capture_form').serializeObject();
 						$.post('http://197.96.18.242/~insurancezone/service/assistroadside/create', formData,
 						function(data, status, xhr) {
@@ -2043,8 +2043,8 @@ window.location = "tel:+27117991592";
 						event.preventDefault();
 						return false;
                     });
-                                                            
-                                                      
+
+
 					$("#Assist_roadside_accident_capture_photos_btn").on('click', function () {
 						$.mobile.changePage("#Assist_roadside_accident_capture_photos", "slide");
 					});
@@ -2052,8 +2052,8 @@ window.location = "tel:+27117991592";
 			</script>
 			<div data-role="page" id="Assist_roadside_accident_capture" class="card">
 				<div id="header">
-					
-					
+
+
 				</div>
 				<div data-role="content" class="card_content">
 					<div data-role="header">
@@ -2124,9 +2124,9 @@ window.location = "tel:+27117991592";
 												</td>
 											</tr>
 
-											
+
 										</table>
-									</div>	
+									</div>
 								</div>
 							</div>
 							</div>
@@ -2135,7 +2135,7 @@ window.location = "tel:+27117991592";
 							<button type="submit" data-theme="b" class="ui-btn-hidden" aria-disabled="false" id="Assist_roadside_accident_capture_submit">Submit</button>
 						</form>
 					</div><!-- /content -->
-					
+
 				</div>
 				<div id="footer" class="footer">
 					<table>
@@ -2147,11 +2147,11 @@ window.location = "tel:+27117991592";
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
@@ -2165,10 +2165,10 @@ window.location = "tel:+27117991592";
                                                                                                                                event.preventDefault();
                                                                                                                                return false;
                                                                                                                                });
-                                                                       
+
                                                                        $("#Assist_roadside_accident_capture_photos .capture").on('click', function () {
                                                                                         var thisEl = this.id;
-                                                                                        
+
                                                                                         navigator.camera.getPicture(
                                                                                                                     function (imageData) {
                                                                                                                     $("#" + thisEl + "_data").val(imageData);
@@ -2178,7 +2178,7 @@ window.location = "tel:+27117991592";
                                                                                                                     },{
                                                                                                                     quality : 50,
                                                                                                                     destinationType : Camera.DestinationType.DATA_URL,
-                                                                                                                    sourceType : Camera.PictureSourceType.CAMERA, 
+                                                                                                                    sourceType : Camera.PictureSourceType.CAMERA,
                                                                                                                     allowEdit : false,
                                                                                                                     encodingType: Camera.EncodingType.JPEG,
                                                                                                                     targetWidth: 800,
@@ -2189,8 +2189,8 @@ window.location = "tel:+27117991592";
 				</script>
 				<div data-role="page" id="Assist_roadside_accident_capture_photos" class="card">
 					<div id="header">
-						
-						
+
+
 					</div>
 					<div data-role="content" class="card_content">
 						<div data-role="header">
@@ -2198,7 +2198,7 @@ window.location = "tel:+27117991592";
 							<a href="#Assist_roadside_accident_capture" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 						</div><!-- /header -->
 						<div data-role="content">
-						
+
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Assist_roadside_accident_capture_photos_1_btn" style="width: 100%;">Damage to vehicle 1</button>
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Assist_roadside_accident_capture_photos_2_btn" style="width: 100%;">Damage to vehicle 2</button>
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Assist_roadside_accident_capture_photos_3_btn" style="width: 100%;">Car Registration vehicle 1</button>
@@ -2220,18 +2220,18 @@ window.location = "tel:+27117991592";
 								</td>
 								<td style="width: 40%;"></td>
 								<td align="right">
-														<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+														<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 								</td>
 							</tr>
                             <tr>
-                
+
                             </tr>
 						</table>
 					</div>
 				</div><!-- /page -->
 
-				
+
 	<!-- Assist_home -->
 	<script>
 		$('#Assist_home').live('pagebeforecreate',function(event){
@@ -2245,8 +2245,8 @@ window.location = "tel:+27117991592";
         </script>
 	<div data-role="page" id="Assist_home" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -2268,21 +2268,21 @@ window.location = "tel:+27117991592";
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-	</div><!-- /page -->			
-				
-				
+	</div><!-- /page -->
+
+
 	 <!-- Assist_home capture-->
     <script>
         $('#Assist_home_capture').live('pagebeforecreate',function(event){
                                        $( "#assist_home_capture_form" ).on( "submit", function( event ) {
                                                                            var formData = $('#assist_home_capture_form').serializeObject();
-                                                                      
+
                                                                            $.post('http://197.96.18.242/~insurancezone/service/assisthome/create', formData,
     						function(data, status, xhr) {
 							var response = jQuery.parseJSON(data)
@@ -2295,9 +2295,9 @@ window.location = "tel:+27117991592";
 						});
                                                                            return false;
                                                                            });
-                                       
-									   
-			   
+
+
+
                                        $("#Assist_home_capture_photos_btn").on('click', function () {
                                                                                $.mobile.changePage("#Assist_home_capture_photos", "slide");
                                                                                });
@@ -2306,8 +2306,8 @@ window.location = "tel:+27117991592";
         </script>
     <div data-role="page" id="Assist_home_capture" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
@@ -2319,7 +2319,7 @@ window.location = "tel:+27117991592";
                     <input type="hidden" name="Assist_home_capture_photos_1_btn_data" id="Assist_home_capture_photos_1_btn_data" value="" />
                     <input type="hidden" name="Assist_home_capture_photos_2_btn_data" id="Assist_home_capture_photos_2_btn_data" value="" />
                     <input type="hidden" name="Assist_home_capture_photos_3_btn_data" id="Assist_home_capture_photos_3_btn_data" value="" />
-                    
+
 					<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 						<div class="ui-block-a" style="width: 100%; max-width: 600px;">
 							<div data-theme="d" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-d" aria-disabled="false">
@@ -2362,21 +2362,21 @@ window.location = "tel:+27117991592";
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-       
+
     </div><!-- /page -->
-    
+
     <!-- Assist_home accident capture photos-->
     <script>
         $('#Assist_home_capture_photos').live('pagebeforecreate',function(event){
                                               $("#Assist_home_capture_photos .capture").on('click', function () {
                                                                                            var thisEl = this.id;
-                                                                                           
+
                                                                                            navigator.camera.getPicture(
                                                                                                                        function (imageData) {
                                                                                                                        $("#" + thisEl + "_data").val(imageData);
@@ -2393,7 +2393,7 @@ window.location = "tel:+27117991592";
                                                                                                                        targetHeight: 800
                                                                                                                        });
                                                                                            });
-                                              
+
                                               $("#Assist_home_capture_photos_submit").on('click', function (event) {
                                                                                          alert('Photo\'s uploaded');
                                                                                          $.mobile.changePage("#Assist_home_capture", "slide");
@@ -2404,15 +2404,15 @@ window.location = "tel:+27117991592";
         </script>
     <div data-role="page" id="Assist_home_capture_photos" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
                 <h1>Add Photo/s</h1>
                 <a href="#Assist_home_capture" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
             </div><!-- /header -->
-            <div data-role="content">						
+            <div data-role="content">
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Assist_home_capture_photos_1_btn" style="width: 100%;">Damaged area 1</button>
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Assist_home_capture_photos_2_btn" style="width: 100%;">Damaged area 2</button>
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Assist_home_capture_photos_3_btn" style="width: 100%;">Damaged area 3</button>
@@ -2430,15 +2430,15 @@ window.location = "tel:+27117991592";
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
-	
+
 	<!-- Assist_medical -->
 	<script>
 		$('#Assist_medical').live('pagebeforecreate',function(event){
@@ -2452,8 +2452,8 @@ window.location = "tel:+27117991592";
 	</script>
 	<div data-role="page" id="Assist_medical" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -2475,7 +2475,7 @@ window.location = "tel:+27117991592";
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -2485,7 +2485,7 @@ window.location = "tel:+27117991592";
 
 		<!-- Assist_medical -> Nearby  -->
 		<script>
-			$('#assist_medical_nearby').live('pagebeforecreate',function(event){			
+			$('#assist_medical_nearby').live('pagebeforecreate',function(event){
 				if(locationpassed == false)
 					{
 					alert("We were unable to determine your location");
@@ -2495,8 +2495,8 @@ window.location = "tel:+27117991592";
 		</script>
 		<div data-role="page" id="assist_medical_nearby" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -2519,10 +2519,10 @@ window.location = "tel:+27117991592";
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /Assist_medical -> Nearby -->
@@ -2537,8 +2537,8 @@ window.location = "tel:+27117991592";
 	</script>
 	<div data-role="page" id="Assist_bailprotect" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -2559,7 +2559,7 @@ window.location = "tel:+27117991592";
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -2577,8 +2577,8 @@ window.location = "tel:+27117991592";
 	</script>
 	<div data-role="page" id="Assist_legal" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -2599,7 +2599,7 @@ window.location = "tel:+27117991592";
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -2613,20 +2613,20 @@ window.location = "tel:+27117991592";
 		$("#myprofile_personaldetails_btn").on('click', function () {
 			$.mobile.changePage("#myprofile_personaldetails", "slide");
 		});
-		
+
 
 		$("#myprofile_personaldetails_update_btn").on('click', function () {
 			$.mobile.changePage("#myprofile_personaldetails_update", "slide");
 		});
-		
+
 				$("#myprofile_personaldetails_policy_copy_btn").on('click', function () {
 			$.mobile.changePage("#myprofile_personaldetails_policy_copy", "slide");
 		});
-		
+
 				$("#myprofile_personaldetails_policy_wording_btn").on('click', function () {
 			$.mobile.changePage("#myprofile_personaldetails_policy_wording", "slide");
 		});
-		
+
 		$("#myprofile_purchasehistory_btn").on('click', function () {
 			$.mobile.changePage("#myprofile_purchasehistory", "slide");
 		});
@@ -2661,7 +2661,7 @@ function policycopy()
 	if (confirm("Would you like to receive a copy of your policy ? "))
 	{
 		$.post('http://197.96.18.242/~insurancezone/service/requestpolicycopy', function(data, status, xhr) {
-	
+
 			var response = jQuery.parseJSON(data);
 			if (response.success) {
 				alert('Thank you for your request ,A copy of your policy will be sent to your mailbox shortly.');
@@ -2673,11 +2673,11 @@ function policycopy()
 	}
 
 }
-</script>	
+</script>
 <div data-role="page" id="MyProfile" class="card">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -2699,7 +2699,7 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
@@ -2736,25 +2736,25 @@ function policycopy()
                                 event.preventDefault();
                                 return false;
                         });
-		
-		
+
+
 	});
-	
+
 
 </script>
 
 	<!-- My Profile - personal details -->
 	<div data-role="page" id="myprofile_personaldetails" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
 				<h1>Personal Details</h1>
 				<a href="#MyProfile" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 			</div><!-- /header -->
-	
+
 			<div data-role="content">
 			<form action="" method="POST" id="myprofile_personaldetails_form">
 			<div style="width: 90%; margin: 0 auto; max-width: 600px;">
@@ -2798,7 +2798,7 @@ function policycopy()
 									<tr>
 										<td style="width: 100%;">
 											<input  type="text" name="address1" id="address1" value="House Number" placeholder="House Number"  style="width: 100%; margin-bottom: 4px;"/>
-											
+
 											<input  type="text" name="address2" id="address2" value="Street name" placeholder="Street name"  style="width: 100%; margin-bottom: 4px;"/>
 											<input  type="text" name="address3" id="address3" value="Street name" placeholder="Suburb"  style="width: 100%; margin-bottom: 4px;"/>
 											<input  type="text" name="address4" id="address4" value="Code" placeholder="Code"  style="width: 100%; margin-bottom: 4px;"/>
@@ -2806,7 +2806,7 @@ function policycopy()
 										</td>
 									</tr>
 								</table>
-							</div>	
+							</div>
 						</div>
 					</div>
 					<div style="clear: both;"></div>
@@ -2814,7 +2814,7 @@ function policycopy()
 				</div>
 				</form>
 			</div><!-- /content -->
-			
+
 		</div>
 	<div id="footer" class="footer">
 		<table>
@@ -2826,14 +2826,14 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
 		</table>
 	</div>
 </div><!-- /page -->
-	
+
 		<!-- My Policies - update -->
 	<script>
 		$('#myprofile_personaldetails_update').live('pagebeforecreate',function(event){
@@ -2848,11 +2848,11 @@ function policycopy()
 	</script>
 	<div data-role="page" id="myprofile_personaldetails_update" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
-		
+
 			<div data-role="header">
 				<h1>Update Policy</h1>
 				<a href="#MyProfile" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
@@ -2860,7 +2860,7 @@ function policycopy()
 			<div data-role="content">
 				<button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false" id="myprofile_personaldetails_update_contact_btn">Contact Details</button>
 				<button type="submit" data-theme="d" class="ui-btn-hidden" aria-disabled="false" id="myprofile_personaldetails_update_address_btn">Physical Address</button>
-			
+
 			</div><!-- /content -->
 		</div>
 		<div id="footer" class="footer">
@@ -2873,14 +2873,14 @@ function policycopy()
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
 			</table>
 		</div>
 	</div><!-- /page -->
-		
+
 		<!-- My Profile - update - contact -->
 		<script>
 			$('#myprofile_personaldetails_update_contact').live('pagebeforecreate',function(event){
@@ -2910,8 +2910,8 @@ function policycopy()
 		</script>
 		<div data-role="page" id="myprofile_personaldetails_update_contact" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<form action="" method="POST" id="myprofile_personaldetails_update_contact_form">
@@ -2944,7 +2944,7 @@ function policycopy()
 											<td style="width: 100%;"><input type="text" name="email" id="email" value="" placeholder="Email Address"  style="width: 100%;"/></td>
 										</tr>
 									</table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div style="clear: both;"></div>
@@ -2963,14 +2963,14 @@ function policycopy()
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /page -->
-		
+
 		<!-- My Policies - update - address -->
 		<script>
 		$('#myprofile_personaldetails_update_address').live('pagebeforecreate',function(event){
@@ -3004,8 +3004,8 @@ function policycopy()
 		</script>
 		<div data-role="page" id="myprofile_personaldetails_update_address" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -3027,14 +3027,14 @@ function policycopy()
 											<input type="text" name="address1" id="address1" value="" placeholder="Street name"  style="width: 100%; margin-bottom: 4px;"/>
 											<input type="text" name="address2" id="address2" value="" placeholder="Suburb"  style="width: 100%; margin-bottom: 4px;"/>
 											<input type="text" name="address3" id="address3" value="" placeholder="Code"  style="width: 100%; margin-bottom: 4px;"/>
-											
+
 										</td>
 										</tr>
 										<tr>
 											<td style="vertical-align: top;"><label for="province" style="width: 150px;">Province:</label></td>
 										</tr>
 										<tr>
-											<td>							
+											<td>
 												<div class="ui-select" style="width: 100%;">
 													<select name="province" id="province" style="width: 100%;">
 														<option value="easterncape">Eastern Cape</option>
@@ -3051,12 +3051,12 @@ function policycopy()
 												</div>
 											</td>
 										</tr>
-									
-										
-										
-									
+
+
+
+
 									</table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div style="clear: both;"></div>
@@ -3075,21 +3075,21 @@ function policycopy()
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /page -->
-		
-		
-	
+
+
+
 	<!-- My Profile - purchase history -->
 	<div data-role="page" id="myprofile_purchasehistory" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -3110,7 +3110,7 @@ function policycopy()
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -3120,7 +3120,7 @@ function policycopy()
 
 
 <!-- Request a quote -->
-<script> 
+<script>
 	$('#requestquote').live('pagebeforecreate',function(event){
 		$("#requestquote_vehicles_btn").on('click', function () {
 			$.mobile.changePage("#requestquote_vehicles", "slide");
@@ -3135,8 +3135,8 @@ function policycopy()
 </script>
 <div data-role="page" id="requestquote" class="card">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -3159,7 +3159,7 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
@@ -3168,7 +3168,7 @@ function policycopy()
 </div><!-- /page -->
 
 	<!-- Request a quote -> Vehicle Insurance -->
-	<script> 
+	<script>
 		$('#requestquote_vehicles').live('pagebeforecreate',function(event){
 			$( "#requestquote_vehicles_form" ).on( "submit", function( event ) {
 				var formData = $('#requestquote_vehicles_form').serializeObject();
@@ -3184,13 +3184,13 @@ function policycopy()
 				});
 				event.preventDefault();
 				return false;
-			}); 
+			});
 
 		});
-		
+
 	</script>
 
- 
+
   <script >$(function() {
 
   $(".buttonincrement").append('<div class="inc button">+</div><div class="dec button">-</div>');
@@ -3230,15 +3230,15 @@ function policycopy()
                 $("#other").hide();
               }
             });
-  
+
         });
     </script>
 
 
 	<div data-role="page" id="requestquote_vehicles" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -3286,12 +3286,12 @@ function policycopy()
 											<div class="buttonincrement"style="width: 100%;"><input type="number" name="age" id="age" value="18"></div>
 											</td>
 										</tr>
-										
+
 										<tr>
 											<td style="vertical-align: top;"><label for="gender" style="width: 150px;">Driver's Gender:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">												
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="gender" id="gender" style="width: 100%;">
 														<option value="Male">Male</option>
@@ -3305,7 +3305,7 @@ function policycopy()
 											<td style="vertical-align: top;"><label for="type" style="width: 150px;">Use:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">												
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="use" id="use" style="width: 100%;">
 														<option value="Business">Business</option>
@@ -3318,7 +3318,7 @@ function policycopy()
 											<td style="vertical-align: top;"><label for="3rdparty" style="width: 150px;">3rd Party Cover:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">								
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="3rdparty" id="3rdparty" style="width: 100%;">
 														<option value="Yes">Yes</option>
@@ -3331,18 +3331,18 @@ function policycopy()
 											<td  style="vertical-align: top;"><label for="storage" style="width: 150px;">Storage Particulars:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">								
-												
+											<td style="width: 100%;">
+
 												<div class="ui-select" style="width: 100%;">
 													<select name="storage" id="storage" style="width: 100%;">
 														<option value="lockedgarage">Locked Garage</option>
 														<option value="behindlockedgates">Behind Locked Gates</option>
 														<option value="Carport">Carport</option>
 														<option value="Other">Other</option>
- 
+
 													</select>
 													<input type="text" name="other" id="other" value="" placeholder="Other Specify"  style="width: 100%; margin-bottom: 4px;"/>
-												
+
 												</div>
 											</td>
 										</tr>
@@ -3357,12 +3357,12 @@ function policycopy()
 												<input type="text" name="address3" id="address3" value="" placeholder="Province"  style="width: 100%; margin-bottom: 4px;"/>
 											</td>
 										</tr>
-										
+
 										<tr>
 											<td style="vertical-align: top;"><label for="type" style="width: 150px;">Security:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">												
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="security" id="security" style="width: 100%;">
 														<option value="factoryfitted">Factory Fitted</option>
@@ -3371,23 +3371,23 @@ function policycopy()
 												</div>
 											</td>
 										</tr>
-										
+
 										<tr>
 											<td style="vertical-align: top;"><label for="previous_insurance" style="width: 150px;">Previous Insurance:</label></td>
 										</tr>
 										<tr>
 											<td style="width: 100%;"><input type="text" name="previous_insurance" id="previous_inurance" value="" placeholder="Previous Insurance"  style="width: 100%;"/></td>
 										</tr>
-									
+
 										<tr>
 											<td style="vertical-align: top;"><label for="claim_history" style="width: 150px;">Claims in the last 3 years:</label></td>
 										</tr>
 										<tr>
 											<td style="width: 100%;"><input type="text" name="claim_history" id="claim_history" value="" placeholder="Claims in the last 3 years"  style="width: 100%;"/></td>
 										</tr>
-										
+
 									</table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div style="clear: both;"></div>
@@ -3406,7 +3406,7 @@ function policycopy()
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -3415,7 +3415,7 @@ function policycopy()
 	</div><!-- /page -->
 
 	<!-- Request a quote -> Home Insurance -->
-	<script> 
+	<script>
 		$('#requestquote_home').live('pagebeforecreate',function(event){
 			$( "#requestquote_home_form" ).on( "submit", function( event ) {
 				var formData = $('#requestquote_home_form').serializeObject();
@@ -3434,7 +3434,7 @@ function policycopy()
 			});
 		});
 	</script>
-	
+
     <script type="text/javascript">
         $(function(){
             //initially hide the textbox
@@ -3447,11 +3447,11 @@ function policycopy()
                 $("#construction_walls_other").hide();
               }
             });
-  
+
         });
     </script>
-	
-	
+
+
     <script type="text/javascript">
         $(function(){
             //initially hide the textbox
@@ -3464,11 +3464,11 @@ function policycopy()
                 $("#construction_roof_other").hide();
               }
             });
-  
+
         });
     </script>
-	
-	
+
+
     <script type="text/javascript">
         $(function(){
             //initially hide the textbox
@@ -3481,14 +3481,14 @@ function policycopy()
                 $("#alarm_yes").hide();
               }
             });
-  
+
         });
     </script>
-	
+
 	<div data-role="page" id="requestquote_home" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -3496,7 +3496,7 @@ function policycopy()
 				<a href="#requestquote" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 			</div><!-- /header -->
 			<div data-role="content">
-					
+
 				<form action="" method="POST" id="requestquote_home_form">
 					<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 						<div class="ui-block-a" style="width: 100%; max-width: 600px;">
@@ -3527,52 +3527,52 @@ function policycopy()
 												<input type="text" name="address5" id="address5" value="" placeholder="Province"  style="width: 100%; margin-bottom: 4px;"/>
 											</td>
 										</tr>
-										
-										
+
+
 										<tr>
 											<td  style="vertical-align: top;"><label for="construction_walls" style="width: 150px;">Construction of walls:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">								
-												
+											<td style="width: 100%;">
+
 												<div class="ui-select" style="width: 100%;">
 													<select name="construction_walls" id="construction_walls" style="width: 100%;">
 														<option value="brick">Brick</option>
 														<option value="wood">Wood</option>
 														<option value="other">Other</option>
- 
+
 													</select>
 													<input type="text" name="construction_walls_other" id="construction_walls_other" value="" placeholder="Other Specify"  style="width: 100%; margin-bottom: 4px;"/>
-												
+
 												</div>
 											</td>
-										</tr>			
+										</tr>
 										<tr>
 											<td  style="vertical-align: top;"><label for="construction_roof" style="width: 150px;">Construction of walls:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">								
-												
+											<td style="width: 100%;">
+
 												<div class="ui-select" style="width: 100%;">
 													<select name="construction_roof" id="construction_roof" style="width: 100%;">
 														<option value="tile">Tile</option>
 														<option value="thatch">Thatch</option>
 														<option value="corrugated_iron">Corrugated Iron</option>
 														<option value="other">Other</option>
- 
+
 													</select>
 													<input type="text" name="construction_roof_other" id="construction_roof_other" value="" placeholder="Other Specify"  style="width: 100%; margin-bottom: 4px;"/>
-												
+
 												</div>
 											</td>
 										</tr>
-										
-										
+
+
 										<tr>
 											<td style="vertical-align: top;"><label for="residence_type" style="width: 150px;">Type of Residence:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">												
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="residence_type" id="residence_type" style="width: 100%;">
 														<option value="house">House</option>
@@ -3588,7 +3588,7 @@ function policycopy()
 											<td style="vertical-align: top;"><label for="occupied_by" style="width: 150px;">Occupied by:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">												
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="occupied_by" id="occupied_by" style="width: 100%;">
 														<option value="owner">Owner</option>
@@ -3598,12 +3598,12 @@ function policycopy()
 												</div>
 											</td>
 										</tr>
-										
+
 										<tr>
 											<td style="vertical-align: top;"><label for="burglar_bars" style="width: 150px;">Are all windows/doors protected by burglar bars:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">												
+											<td style="width: 100%;">
 												<div class="ui-select" style="width: 100%;">
 													<select name="burglar_bars" id="burglar_bars" style="width: 100%;">
 														<option value="yes">Yes</option>
@@ -3618,23 +3618,23 @@ function policycopy()
 											<td  style="vertical-align: top;"><label for="alarm" style="width: 150px;">alarm:</label></td>
 										</tr>
 										<tr>
-											<td style="width: 100%;">								
-												
+											<td style="width: 100%;">
+
 												<div class="ui-select" style="width: 100%;">
 													<select name="alarm" id="alarm" style="width: 100%;">
 														<option value="no">no</option>
 														<option value="yes">yes</option>
-														
- 
+
+
 													</select>
 												<input type="text" name="alarm_other" id="alarm_yes" value="" placeholder="Yes Please Specify"  style="width: 100%; margin-bottom: 4px;"/>
-												
-												
+
+
 												</div>
 											</td>
 										</tr>
 									</table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div style="clear: both;"></div>
@@ -3643,7 +3643,7 @@ function policycopy()
 				</form>
 			</div><!-- /content -->
 		</div>
-		
+
 		<div id="footer" class="footer">
 			<table>
 				<tr>
@@ -3654,7 +3654,7 @@ function policycopy()
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -3664,7 +3664,7 @@ function policycopy()
 
 
 	<!-- Request alteraation -> All Risk insurance -->
-	<script> 
+	<script>
 		$('#request_alteration').live('pagebeforecreate',function(event){
 			$( "#request_alteration_form" ).on( "submit", function( event ) {
 				var formData = $('#request_alteration_form').serializeObject();
@@ -3685,8 +3685,8 @@ function policycopy()
 	</script>
 	<div data-role="page" id="request_alteration" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -3721,7 +3721,7 @@ function policycopy()
 											<td style="width: 100%;">
 												<input type="text" name="contactnumber" id="contactnumber" value="" placeholder="Contact Number"  style="width: 100%; margin-bottom: 4px;"/>
 											</td>
-										</tr>										
+										</tr>
 																				<tr>
 											<td style="vertical-align: top;"><label for="alemmail">Email Address:</label></td>
 										</tr>
@@ -3738,9 +3738,9 @@ function policycopy()
 												<input type="text" name="request" id="request" value="" placeholder="Adjustments Needed"  style="width: 100%; margin-bottom: 4px;"/>
 											</td>
 										</tr>
-										
+
 									</table>
-								</div>	
+								</div>
 							</div>
 						</div>
 						<div style="clear: both;"></div>
@@ -3760,7 +3760,7 @@ function policycopy()
 					</td>
 					<td style="width: 40%;"></td>
 					<td align="right">
-						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+						<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 					</td>
 				</tr>
 
@@ -3770,17 +3770,17 @@ function policycopy()
 <!--Contact Us -->
 
 
-		
-	
-
-
-
-	
 
 
 
 
-	
+
+
+
+
+
+
+
 </div>
 <!-- Concierge, Travel & Lifestyle -->
 <script>
@@ -3790,8 +3790,8 @@ function policycopy()
 </script>
 <div data-role="page" id="conciergetravellifestyle" class="card" data-dom-cache="false">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -3805,9 +3805,9 @@ function policycopy()
 				<li id="conciergetravellifestyle_6"><a href="#conciergetravellifestyle_competitions"><img src="images/Concierge_competitions.jpg" alt="Competitions" class="ui-li-icon">Competitions</a></li>
 				<li id="conciergetravellifestyle_5"><a href="#conciergetravellifestyle_offers"><img src="images/Concierge_specialoffers.jpg" alt="Special Offers" class="ui-li-icon">Special Offers</a></li>
 				<li id="conciergetravellifestyle_4"><a href="#" onclick="openInAppBrowser('http://www.mobi.oneloyalty.co.za/insurancezone/');" target="_blank"><img src="images/oneloyalty_icon.png" alt="Lifestyle Mall" class="ui-li-icon">Lifestyle Mall</a></li>
-				
+
 				<li id="conciergetravellifestyle_3"><a href="tel:+27112917485" target="_blank"><img src="images/oneloyalty_icon.png" alt="Call" class="ui-li-icon"> Call for Lifestyle Benefits </a></li>
-				
+
 			</ul>
 		</div><!-- /content -->
 	</div>
@@ -3821,14 +3821,14 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
 		</table>
 	</div>
-</div><!-- /page -->				
-			
+</div><!-- /page -->
+
  <script type="text/template" id="offer-item">
                                 <tr>
                                                 <td style="width:100px">
@@ -3844,7 +3844,7 @@ function policycopy()
                 <script>
 		$('#conciergetravellifestyle_offers').live('pagebeforecreate', function() {
 			var offer = {};
-			
+
 			offer.Offer = Backbone.Model.extend({
 			});
 
@@ -3855,7 +3855,7 @@ function policycopy()
 
 			offer.initData = function() {
 				offer.offers = new offer.Offers();
-				
+
 				offer.offers.fetch({async:false});
 			};
 
@@ -3876,11 +3876,11 @@ function policycopy()
 							listView.append(template(offer.toJSON()));
 						});
 						container.html($(this.el));
-						
+
 						if(offers.length == 0) {
 							$("#offers_msg").append("No Special Offers are available at this time.");
 						}
-					}	
+					}
 				});
 
 			var offerListContainer = $('#offer-index'), offerListView;
@@ -3888,15 +3888,15 @@ function policycopy()
 
 			offerListView = new offer.OfferListView({collection: offer.offers, viewContainer: offerListContainer});
 			offerListView.render()
-			
-			
+
+
 		});
 	</script>
 	<!-- Concierge, Travel & Lifestyle -> Special Offers -->
 	<div data-role="page" id="conciergetravellifestyle_offers" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -3909,7 +3909,7 @@ function policycopy()
 				</table>
 			</div><!-- /content -->
 		</div>
-                               
+
 <div id="footer" class="footer">
 		<table>
 			<tr>
@@ -3920,7 +3920,7 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
@@ -3930,7 +3930,7 @@ function policycopy()
            	<script type="text/template" id="competition-item">
 	<tr>
 		<td style="width: 100px; vertical-align: top;padding-right:1em;">
-			
+
 			<img src="data:image/png;base64, <%= img %>" style="-webkit-border-radius: 15px" />
 		</td>
 		<td style="vertical-align:top">
@@ -3951,7 +3951,7 @@ function policycopy()
 	<script>
 		$('#conciergetravellifestyle_competitions').live('pagebeforecreate', function() {
 			var competition = {};
-			
+
 			competition.Competition = Backbone.Model.extend({
 			});
 
@@ -3960,7 +3960,7 @@ function policycopy()
 				url : 'http://197.96.18.242/~insurancezone/service/competition/index'
 			});
 
-			
+
 			competition.initData = function() {
 				competition.competitions = new competition.Competitions();
 				competition.competitions.fetch({async:false});
@@ -3972,10 +3972,10 @@ function policycopy()
 					attributes : {'data-role' : 'fieldcontain'},
 					initialize: function() {
 						this.template = _.template($('#competition-item').html());
-						
+
 					},
 					render : function() {
-					
+
 						var container = this.options.viewContainer,
 							competitions = this.collection,
 							template = this.template,
@@ -3993,11 +3993,11 @@ function policycopy()
 							listView.append(template(data));
 						});
 						container.html($(this.el));
-						
+
 						if(competitions.length == 0) {
 							$("#competitions_msg").append("No competitions are available at this time");
 						}
-					}	
+					}
 				});
 
 			var competitionListContainer = $('#competition-index'), CompetitionListView;
@@ -4005,7 +4005,7 @@ function policycopy()
 
 			competitionListView = new competition.CompetitionListView({collection: competition.competitions, viewContainer: competitionListContainer});
 			competitionListView.render();
-			
+
 		$( "#conciergetravellifestyle_competitions form" ).on( "submit", function( event ) {
                         var formData = $(this).serializeObject();
                         $.post('http://197.96.18.242/~insurancezone/service/competition/create', formData,
@@ -4025,7 +4025,7 @@ function policycopy()
                 });
 				$.get('http://197.96.18.242/~insurancezone/service/competition', function(data) {
 			var data = jQuery.parseJSON(data);
-			
+
 			$.each(data, function(index, obj) {
 					$("#competition"+obj).html("You've already entered this competition.");
 			});
@@ -4035,8 +4035,8 @@ function policycopy()
 	<!-- Concierge, Travel & Lifestyle -> Competitions -->
 	<div data-role="page" id="conciergetravellifestyle_competitions" class="card">
 		<div id="header">
-			
-			
+
+
 		</div>
 		<div data-role="content" class="card_content">
 			<div data-role="header">
@@ -4092,19 +4092,19 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
 		</table>
 	</div>
                 </div><!-- /page -->
-    
+
     <!-- Footer_info -->
     <div data-role="page" id="Footer_info" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
@@ -4126,20 +4126,20 @@ function policycopy()
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
-    
+
     <!-- Footer_info -->
     <div data-role="page" id="Footer_info_signedout" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
@@ -4162,15 +4162,15 @@ function policycopy()
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
-    
+
 
 <!-- disclaimer -->
    <div data-role="page" id="disclaimer" class="card" >
@@ -4220,10 +4220,10 @@ function policycopy()
                <b>CONDITIONS OF USE</b>
                <ol>
                   <li>You will not, nor allow third parties on your behalf to (i) make and distribute copies of the Application (ii) attempt to copy, reproduce, alter, modify, reverse engineer, disassemble, decompile, transfer, exchange or translate the Application; or (iii)
-                     create derivative works of the Application of any kind whatsoever. 
+                     create derivative works of the Application of any kind whatsoever.
                   </li>
                   <li>The Application is currently made available to you free of charge for your personal, non-commercial use. Insurance Zone Administration Services PTY (LTD) reserves the right to amend or withdraw the Application, or charge for the application or service provided to you in accordance with these
-                     appterms, at any time and for any reason. 
+                     appterms, at any time and for any reason.
                   </li>
                   <li>You acknowledge that the terms of agreement with your respective mobile network provider ('Mobile Provider') will continue to apply when using the Application. As a result, you may be charged by the Mobile Provider for access to network connection services
                      for the duration of the connection while accessing the Application or any such third party charges as may arise. You accept responsibility for any such charges that arise.
@@ -4239,7 +4239,7 @@ function policycopy()
                      Application is provided over the internet and mobile networks and so the quality and availability of the Application may be affected by factors outside Insurance Zone Administration Services PTY (LTD)'s reasonable control.
                   </li>
                   <li>Insurance Zone Administration Services PTY (LTD) and sub-contractors do not accept any responsibility whatsoever for unavailability of the Application, or any difficulty or inability to download or access content or any other communication system failure which may result in the Application
-                     being unavailable. 
+                     being unavailable.
                   </li>
                </ol>
             </li>
@@ -4284,14 +4284,14 @@ function policycopy()
       <table>
          <tr>
             <td align="left">
-               <a href="#" onclick="openInAppBrowser('http://www.insurancezone.co.za');" target="_blank" style="width: 100%;"><img src="images/footer_info.gif" style="width: 100%; max-width:50px" /></a>							
+               <a href="#" onclick="openInAppBrowser('http://www.insurancezone.co.za');" target="_blank" style="width: 100%;"><img src="images/footer_info.gif" style="width: 100%; max-width:50px" /></a>
             </td>
             <td>
                <a href="#menu" style="width: 100%;"><img src="images/footer_home.gif" style="width: 100%; max-width:50px" /></a>
             </td>
             <td style="width: 40%;"></td>
             <td align="right">
-               <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+               <a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
             </td>
          </tr>
       </table>
@@ -4300,7 +4300,7 @@ function policycopy()
 <!-- /page -->
 
 <!-- Lodge a claim -->
-<script> 
+<script>
 	$('#Lodgeaclaim').live('pagebeforecreate',function(event){
 
 		$("#Lodgeaclaim_vehicles_btn").on('click', function () {
@@ -4316,8 +4316,8 @@ function policycopy()
 </script>
 <div data-role="page" id="Lodgeaclaim" class="card">
 	<div id="header">
-		
-		
+
+
 	</div>
 	<div data-role="content" class="card_content">
 		<div data-role="header">
@@ -4340,7 +4340,7 @@ function policycopy()
 				</td>
 				<td style="width: 40%;"></td>
 				<td align="right">
-					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+					<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 				</td>
 			</tr>
 
@@ -4354,12 +4354,12 @@ function policycopy()
 					document.getElementById("lodgecv_date").value = Date();
 					if(locationpassed==true)
 					{
-					document.getElementById("lodgecv_location").value = x+', '+y; 
+					document.getElementById("lodgecv_location").value = x+', '+y;
 					}
 					else
 					{document.getElementById("lodgecv_location").value = "Could not obtain location."; }
 				$( "#Lodgeaclaim_vehicles_capture_form" ).on( "submit", function( event ) {
-					
+
 						var formData = $('#Lodgeaclaim_vehicles_capture_form').serializeObject();
 						$.post('http://197.96.18.242/~insurancezone/service/lodgeclaimvehicle/create', formData,
 						function(data, status, xhr) {
@@ -4374,8 +4374,8 @@ function policycopy()
 						event.preventDefault();
 						return false;
                     });
-                                                            
-                                                      
+
+
 					$("#Lodgeaclaim_vehicles_capture_photos_btn").on('click', function () {
 						$.mobile.changePage("#Lodgeaclaim_vehicles_capture_photos", "slide");
 					});
@@ -4383,8 +4383,8 @@ function policycopy()
 			</script>
 			<div data-role="page" id="Lodgeaclaim_vehicles_capture" class="card">
 				<div id="header">
-					
-					
+
+
 				</div>
 				<div data-role="content" class="card_content">
 					<div data-role="header">
@@ -4455,9 +4455,9 @@ function policycopy()
 												</td>
 											</tr>
 
-											
+
 										</table>
-									</div>	
+									</div>
 								</div>
 							</div>
 							<div style="clear: both;"></div>
@@ -4466,7 +4466,7 @@ function policycopy()
 						</div>
 						</form>
 					</div><!-- /content -->
-					
+
 				</div>
 				<div id="footer" class="footer">
 					<table>
@@ -4478,11 +4478,11 @@ function policycopy()
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
@@ -4496,10 +4496,10 @@ function policycopy()
                                                                                                                                event.preventDefault();
                                                                                                                                return false;
                                                                                                                                });
-                                                                       
+
                                                                        $("#Lodgeaclaim_vehicles_capture_photos .capture").on('click', function () {
                                                                                         var thisEl = this.id;
-                                                                                        
+
                                                                                         navigator.camera.getPicture(
                                                                                                                     function (imageData) {
                                                                                                                     $("#" + thisEl + "_data").val(imageData);
@@ -4509,7 +4509,7 @@ function policycopy()
                                                                                                                     },{
                                                                                                                     quality : 50,
                                                                                                                     destinationType : Camera.DestinationType.DATA_URL,
-                                                                                                                    sourceType : Camera.PictureSourceType.CAMERA, 
+                                                                                                                    sourceType : Camera.PictureSourceType.CAMERA,
                                                                                                                     allowEdit : false,
                                                                                                                     encodingType: Camera.EncodingType.JPEG,
                                                                                                                     targetWidth: 800,
@@ -4520,8 +4520,8 @@ function policycopy()
 				</script>
 				<div data-role="page" id="Lodgeaclaim_vehicles_capture_photos" class="card">
 					<div id="header">
-						
-						
+
+
 					</div>
 					<div data-role="content" class="card_content">
 						<div data-role="header">
@@ -4529,7 +4529,7 @@ function policycopy()
 							<a href="#Lodgeaclaim_vehicles_capture" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 						</div><!-- /header -->
 						<div data-role="content">
-						
+
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_vehicles_capture_photos_1_btn" style="width: 100%;">Damage to vehicle 1</button>
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_vehicles_capture_photos_2_btn" style="width: 100%;">Damage to vehicle 2</button>
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_vehicles_capture_photos_3_btn" style="width: 100%;">Car Registration vehicle 1</button>
@@ -4551,12 +4551,12 @@ function policycopy()
 								</td>
 								<td style="width: 40%;"></td>
 								<td align="right">
-														<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+														<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 								</td>
 							</tr>
                             <tr>
-                
+
                             </tr>
 						</table>
 					</div>
@@ -4567,12 +4567,12 @@ function policycopy()
 					document.getElementById("lodgecw_date").value = Date();
 										if(locationpassed==true)
 					{
-					document.getElementById("lodgecw_location").value = x+', '+y; 
+					document.getElementById("lodgecw_location").value = x+', '+y;
 					}
 					else
 					{document.getElementById("lodgecw_location").value = "Could not obtain location."; }
 				$( "#Lodgeaclaim_windscreens_capture_form" ).on( "submit", function( event ) {
-					
+
 						var formData = $('#Lodgeaclaim_windscreens_capture_form').serializeObject();
 						$.post('http://197.96.18.242/~insurancezone/service/lodgeclaimwindscreen/create', formData,
 						function(data, status, xhr) {
@@ -4587,8 +4587,8 @@ function policycopy()
 						event.preventDefault();
 						return false;
                     });
-                                                            
-                                                      
+
+
 					$("#Lodgeaclaim_windscreens_capture_photos_btn").on('click', function () {
 						$.mobile.changePage("#Lodgeaclaim_windscreens_capture_photos", "slide");
 					});
@@ -4596,8 +4596,8 @@ function policycopy()
 			</script>
 			<div data-role="page" id="Lodgeaclaim_windscreens_capture" class="card">
 				<div id="header">
-					
-					
+
+
 				</div>
 				<div data-role="content" class="card_content">
 					<div data-role="header">
@@ -4608,7 +4608,7 @@ function policycopy()
 						<form action="" method="POST" id="Lodgeaclaim_windscreens_capture_form" enctype="multipart/form-data">
                             <input type="hidden" name="Lodgeaclaim_windscreens_capture_photos_1_btn_data" id="Lodgeaclaim_windscreens_capture_photos_1_btn_data" value="" />
                             <input type="hidden" name="Lodgeaclaim_windscreens_capture_photos_2_btn_data" id="Lodgeaclaim_windscreens_capture_photos_2_btn_data" value="" />
-     
+
 						<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 							<div class="ui-block-a" style="width: 100%; max-width: 600px;">
 								<div data-theme="d" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-d" aria-disabled="false">
@@ -4645,12 +4645,12 @@ function policycopy()
 											<tr>
 												<td style="width: 100%;"><input type="text" name="areaofglassdamaged" id="areaofglassdamaged" value="" placeholder="Area of Glass Damage"  style="width: 100%;"/></td>
 											</tr>
-											
 
 
-											
+
+
 										</table>
-									</div>	
+									</div>
 								</div>
 							</div>
 							<div style="clear: both;"></div>
@@ -4659,7 +4659,7 @@ function policycopy()
 						</div>
 						</form>
 					</div><!-- /content -->
-					
+
 				</div>
 				<div id="footer" class="footer">
 					<table>
@@ -4671,11 +4671,11 @@ function policycopy()
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
@@ -4689,10 +4689,10 @@ function policycopy()
                                                                                                                                event.preventDefault();
                                                                                                                                return false;
                                                                                                                                });
-                                                                       
+
                                                                        $("#Lodgeaclaim_windscreens_capture_photos .capture").on('click', function () {
                                                                                         var thisEl = this.id;
-                                                                                        
+
                                                                                         navigator.camera.getPicture(
                                                                                                                     function (imageData) {
                                                                                                                     $("#" + thisEl + "_data").val(imageData);
@@ -4702,7 +4702,7 @@ function policycopy()
                                                                                                                     },{
                                                                                                                     quality : 50,
                                                                                                                     destinationType : Camera.DestinationType.DATA_URL,
-                                                                                                                    sourceType : Camera.PictureSourceType.CAMERA, 
+                                                                                                                    sourceType : Camera.PictureSourceType.CAMERA,
                                                                                                                     allowEdit : false,
                                                                                                                     encodingType: Camera.EncodingType.JPEG,
                                                                                                                     targetWidth: 800,
@@ -4713,8 +4713,8 @@ function policycopy()
 				</script>
 				<div data-role="page" id="Lodgeaclaim_windscreens_capture_photos" class="card">
 					<div id="header">
-						
-						
+
+
 					</div>
 					<div data-role="content" class="card_content">
 						<div data-role="header">
@@ -4722,7 +4722,7 @@ function policycopy()
 							<a href="#Lodgeaclaim_windscreens_capture" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 						</div><!-- /header -->
 						<div data-role="content">
-						
+
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_windscreens_capture_photos_1_btn" style="width: 100%;">Damage to Windscreen 1</button>
 							<button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_windscreens_capture_photos_2_btn" style="width: 100%;">Damage to Windscreen 2</button>
 
@@ -4740,12 +4740,12 @@ function policycopy()
 								</td>
 								<td style="width: 40%;"></td>
 								<td align="right">
-														<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+														<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 								</td>
 							</tr>
                             <tr>
-                
+
                             </tr>
 						</table>
 					</div>
@@ -4769,7 +4769,7 @@ function policycopy()
                                                                                   });
                                                                            return false;
                                                                            });
-                                       
+
                                        $("#Lodgeaclaim_home_capture_photos_btn").on('click', function () {
                                                                                $.mobile.changePage("#Lodgeaclaim_home_capture_photos", "slide");
                                                                                });
@@ -4778,8 +4778,8 @@ function policycopy()
         </script>
     <div data-role="page" id="Lodgeaclaim_home_capture" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
@@ -4791,7 +4791,7 @@ function policycopy()
                     <input type="hidden" name="Lodgeaclaim_home_capture_photos_1_btn_data" id="Lodgeaclaim_home_capture_photos_1_btn_data" value="" />
                     <input type="hidden" name="Lodgeaclaim_home_capture_photos_2_btn_data" id="Lodgeaclaim_home_capture_photos_2_btn_data" value="" />
 
-                    
+
 					<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 						<div class="ui-block-a" style="width: 100%; max-width: 600px;">
 							<div data-theme="d" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-d" aria-disabled="false">
@@ -4813,16 +4813,16 @@ function policycopy()
 											<input type="text" name="address1" id="address1" value="" placeholder="Street name"  style="width: 100%; margin-bottom: 4px;"/>
 											<input type="text" name="address2" id="address2" value="" placeholder="Suburb"  style="width: 100%; margin-bottom: 4px;"/>
 											<input type="text" name="address3" id="address3" value="" placeholder="Code"  style="width: 100%; margin-bottom: 4px;"/>
-												
-											
-											
+
+
+
 										</td>
 									</tr>
 									<tr>
 											<td style="vertical-align: top;"><label for="provincer" style="width: 100px;"><b>Province:</b></label></td>
 										</tr>
 										<tr>
-											<td>							
+											<td>
 												<div class="ui-select" style="width: 100%;">
 													<select name="province" id="province" style="width: 100%;">
 														<option value="easterncape">Eastern Cape</option>
@@ -4838,7 +4838,7 @@ function policycopy()
 													</select>
 												</div>
 											</td>
-										</tr>	
+										</tr>
 										<tr>
 											<td style="vertical-align: top;"><label for="nature5" style="">Nature of Incident:</label></td>
 										</tr>
@@ -4876,21 +4876,21 @@ function policycopy()
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
-        
+
     </div><!-- /page -->
-    
+
     <!-- Lodgeaclaim_home accident capture photos-->
     <script>
         $('#Lodgeaclaim_home_capture_photos').live('pagebeforecreate',function(event){
                                               $("#Lodgeaclaim_home_capture_photos .capture").on('click', function () {
                                                                                            var thisEl = this.id;
-                                                                                           
+
                                                                                            navigator.camera.getPicture(
                                                                                                                        function (imageData) {
                                                                                                                        $("#" + thisEl + "_data").val(imageData);
@@ -4907,7 +4907,7 @@ function policycopy()
                                                                                                                        targetHeight: 800
                                                                                                                        });
                                                                                            });
-                                              
+
                                               $("#Lodgeaclaim_home_capture_photos_submit").on('click', function (event) {
                                                                                          alert('Photo\'s uploaded');
                                                                                          $.mobile.changePage("#Lodgeaclaim_home_capture", "slide");
@@ -4918,15 +4918,15 @@ function policycopy()
         </script>
     <div data-role="page" id="Lodgeaclaim_home_capture_photos" class="card">
         <div id="header">
-            
-            
+
+
         </div>
         <div data-role="content" class="card_content">
             <div data-role="header">
                 <h1>Add Photo/s</h1>
                 <a href="#Lodgeaclaim_home_capture" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
             </div><!-- /header -->
-            <div data-role="content">						
+            <div data-role="content">
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_home_capture_photos_1_btn" style="width: 100%;">Damage to property</button>
                 <button type="button" data-theme="d" class="ui-btn-hidden capture" aria-disabled="false" id="Lodgeaclaim_home_capture_photos_2_btn" style="width: 100%;">Forced Entry</button>
 
@@ -4944,15 +4944,15 @@ function policycopy()
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+							<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
     </div><!-- /page -->
 
-	
+
 	<!-- Contact Us-->
 		<script>
 			$('#contactus').live('pagebeforecreate',function(event){
@@ -4966,8 +4966,8 @@ function policycopy()
 		</script>
 		<div data-role="page" id="contactus" class="card">
 			<div id="header">
-				
-				
+
+
 			</div>
 			<div data-role="content" class="card_content">
 				<div data-role="header">
@@ -4989,32 +4989,32 @@ function policycopy()
 						</td>
 						<td style="width: 40%;"></td>
 						<td align="right">
-												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+												<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 						</td>
 					</tr>
-                    
+
 				</table>
 			</div>
 		</div><!-- /page -->
-			
+
 			<!-- Assist_roadside accident capture-->
 	<script>
 	$('#find_us').live('pagebeforecreate',function(event){
 		$("#fframe").html('<iframe width="100%" height="40%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.za/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Insurance+Zone,+Concorde+Road,+Bedfordview,+Gauteng&amp;aq=0&amp;oq=ins&amp;sll=-26.17625,28.12229&amp;sspn=0.01036,0.019011&amp;vpsrc=0&amp;g=24+Concorde+Road,+Bedfordview,+Germiston,+Gauteng&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-26.17625,28.12229&amp;spn=0.006295,0.006295&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.za/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Insurance+Zone,+Concorde+Road,+Bedfordview,+Gauteng&amp;aq=0&amp;oq=ins&amp;sll=-26.17625,28.12229&amp;sspn=0.01036,0.019011&amp;vpsrc=0&amp;g=24+Concorde+Road,+Bedfordview,+Germiston,+Gauteng&amp;ie=UTF8&amp;hq=&amp;hnear=&amp;ll=-26.17625,28.12229&amp;spn=0.006295,0.006295&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>'
-		
+
 		);
-			
+
 
 	});
 
 
-	
+
 </script>
 			<div data-role="page" id="find_us" class="card">
 				<div id="header">
-					
-					
+
+
 				</div>
 				<div data-role="content" class="card_content">
 					<div data-role="header">
@@ -5022,44 +5022,44 @@ function policycopy()
 						<a href="#contactus" data-icon="back" data-iconpos="left" data-direction="reverse" class="ui-btn-right">back</a>
 					</div><!-- /header -->
 					<div data-role="content">
-						
-                     
+
+
 						<div style="width: 90%; margin: 0 auto; max-width: 600px;">
 							<div class="ui-block-a" style="width: 100%; max-width: 600px;">
 								<div data-theme="d" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-d" aria-disabled="false">
 									<div data-role="fieldcontain">
 
-									
+
 													<div style="max-width :300px ; margin :0 auto;text-align :center; padding-top:20px;">
 				<div id="fframe"style="height:100%;"></div>
 				<div >
-				
+
 					<table style="max-width :300px; margin :0 auto;text-align :center;">
 					<tr>
-				
+
 						<td >
-							
-							
+
+
 							<p>24 Concorde Rd West <br />
 							Bedfordview<br />
-		
+
 							2007
 							  </p>
-							
-						
+
+
 						</td>
-						</tr>			
-						</table>			
+						</tr>
+						</table>
 					</div>
-</div>					
-									</div>	
+</div>
+									</div>
 								</div>
 							</div>
 							</div>
 
-					
+
 					</div><!-- /content -->
-					
+
 				</div>
 				<div id="footer" class="footer">
 					<table>
@@ -5071,18 +5071,18 @@ function policycopy()
 							</td>
 							<td style="width: 40%;"></td>
 							<td align="right">
-													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a> 
+													<a href="#login" style="width: 100%;"><img src="images/logo_small.png" style="width:100%; max-width:130px;max-height:50px;" /></a>
 
 							</td>
 						</tr>
-                        
+
 					</table>
 				</div>
 			</div><!-- /page -->
 
-	  
- 
-	
+
+
+
 	</body>
 </html>
 
