@@ -1,0 +1,18 @@
+
+												
+</script>
+    <script type="text/javascript">
+        $(function(){
+            //initially hide the textbox
+            $("#alarm_yes").hide();
+            $('#alarm').change(function() {
+              if($(this).find('option:selected').val() == "yes"){
+                $("#alarm_yes").show();
+              }else{
+                $("#alarm_yes").val("");
+                $("#alarm_yes").hide();
+              }
+            });
+  
+        });
+    </script>
